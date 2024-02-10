@@ -1,0 +1,18 @@
+{% extends "AppCoder/base.html" %}
+
+{% block body%}
+    <h1> Entregables</h1>
+{% endblock body %}
+
+{% block otroblock %}
+    {% if Entregables %}
+    <p>Resultados para: {{entregable}}</p>
+    <ul>
+    {% for entregable in Entregables %}
+        <li>{{estudiante.nombre}} | {{estudiante.fecha_entrega}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay datos con esa descripcion.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "AppCoder/base.html" %}
+
+{% block body%}
+    <h1>Profesores</h1>
+{% endblock body %}
+
+{% block otroblock %}
+    {% if Profesores %}
+    <p>Resultados para: {{profesor}}</p>
+    <ul>
+    {% for profesor in Profesores %}
+        <li>{{profesor.nombre}} | {{profesor.apellido}} | {{profesor.email}} | {{profesor.profesion}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay datos con esa descripcion.</p>
+    {% endif %}
+{% endblock %}
